@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fatArrowFunction</title>
+  </head>
+  <body>
+    <input type="text" class="search" placeholder="type here" />
+    <p class="result"></p>
+    <div class="thanks"></div>
+    <!-- <script src="/fatArrowFunction.js"></script> -->
+    <script>
+      const searchInput = document.querySelector(".search");
+      const display = document.querySelector(".result");
+      const thanks = document.querySelector(".thanks");
+
+      function show() {
+        display.innerHTML = this.value;
+        var self = this;
+        setTimeout(function () {
+          thanks.innerHTML = `you have typed: ${self.value}`;
+        }, 1000);
+      }
+
+      searchInput.addEventListener("keyup", show);
+    </script>
+  </body>
+</html>
